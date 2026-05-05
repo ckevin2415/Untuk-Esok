@@ -1,11 +1,12 @@
 'use client';
-import { useState, useEffect } from 'react';
+
+import { Suspense, useState, useEffect } from 'react';
 import { auth, db } from '../../lib/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { useRouter, useSearchParams } from 'next/navigation';
 
-export default function ProfilePage() {
+function ProfileContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const incomplete = searchParams.get('incomplete');
@@ -209,5 +210,17 @@ export default function ProfilePage() {
                 </div>
             )}
         </>
+    );
+}
+
+export default function ProfilePage() {
+    return (
+        <Suspense fallback={
+            <div style={{ minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                Loading profile...
+            </div>
+        }>
+            <ProfileContent />
+        </Suspense>
     );
 }
