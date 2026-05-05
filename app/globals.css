@@ -2048,6 +2048,25 @@ footer {
     .misi-card-title {
         white-space: normal;
     }
+
+    .avatar-edit-circle {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+    }
+    
+    .avatar-edit-section {
+        gap: 15px;
+    }
+    
+    .profile-display-name {
+        font-size: 20px;
+    }
+    
+    .profile-email {
+        font-size: 14px;
+        word-break: break-word;
+    }
 }
 
 .about-bg {
