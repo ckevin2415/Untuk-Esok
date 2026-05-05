@@ -839,6 +839,7 @@ nav {
     font-size: 32px;
     font-weight: bold;
     font-family: var(--font-body);
+    flex-shrink: 0;
 }
 
 .admin-table {
@@ -2109,6 +2110,7 @@ footer {
     object-fit: cover;
     object-position: center;
     background-color: #e2e8f0;
+    border-radius: 8px;
 }
 
 .footer-logo {
